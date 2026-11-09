@@ -1,50 +1,152 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practica 1 - HTML</title>
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        .card {
-            background: white;
-            padding: 40px 60px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            text-align: center;
-        }
-        h1 {
-            margin: 0;
-            color: #333;
-            font-size: 2.5rem;
-            letter-spacing: 1px;
-        }
-        p {
-            margin: 10px 0 0 0;
-            color: #777;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Protocolos de comunicación en redes inalámbricas</title>
+<link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
-    <div class="card">
-        <p>Practica IOT</p>
-        <h1>Edwin David Morales Guevara</h1>
-        <h2>Ingenieria en Sistemas Computacionales</h2>
-        <h2>Materia: IOT</h2>
-        <h3>Semestre n°7</h3>
-    </div>
+<header class="cabecera">
+  <a class="marca" href="#inicio">IoT · Redes inalámbricas</a>
+  <form class="buscador" role="search" action="#indice">
+    <input type="search" name="q" list="temas" placeholder="Buscar un tema: Zigbee, BLE, WPA3, malla…" aria-label="Buscar un tema">
+    <datalist id="temas">
+      <option value="Modelo OSI"><option value="TCP/IP"><option value="Topologías">
+      <option value="Zigbee"><option value="IEEE 802.15.4"><option value="Bluetooth Low Energy">
+      <option value="Wi-Fi"><option value="WPA3"><option value="Referencias APA 7">
+    </datalist>
+    <nav class="sugerencias" aria-label="Temas">
+      <a href="#arquitecturas">Arquitecturas de comunicación</a>
+      <a href="#zigbee">Protocolo Zigbee</a>
+      <a href="#bluetooth">Protocolo Bluetooth</a>
+      <a href="#wifi">Redes Wi-Fi</a>
+      <a href="#referencias">Referencias APA 7</a>
+    </nav>
+  </form>
+</header>
 
+<section class="portada" id="inicio">
+  <span class="onda"></span><span class="onda"></span><span class="onda"></span>
+  <div>
+    <h1>Protocolos de comunicación en redes inalámbricas</h1>
+    <p>Conceptos, características, funciones y casos de uso de las tecnologías que conectan los dispositivos del Internet de las cosas.</p>
+  </div>
+</section>
+
+<main>
+  <nav class="indice" id="indice" aria-label="Índice">
+    <a href="#arquitecturas">Arquitecturas de comunicación</a>
+    <a href="#zigbee">Protocolo Zigbee</a>
+    <a href="#bluetooth">Protocolo Bluetooth</a>
+    <a href="#wifi">Redes Wi-Fi</a>
+  </nav>
+
+  <section class="tema" id="arquitecturas">
+    <h2>Arquitecturas de comunicación</h2>
+    <p class="intro">Según la RAE, un <em>protocolo</em> es el conjunto de reglas que rigen el intercambio de datos entre sistemas, y una <em>red</em> es el conjunto de equipos conectados entre sí. Una arquitectura organiza esas reglas en capas para que dispositivos de distintos fabricantes se entiendan (Stallings, 2004; Tanenbaum y Wetherall, 2012).</p>
+    <a class="figura" href="https://es.wikipedia.org/wiki/Topolog%C3%ADa_de_red" target="_blank" rel="noopener">Imagen: topologías de red (espacio en blanco)</a>
+    <article class="tarjeta"><h3>Concepto</h3><ul>
+      <li>Modelo OSI de siete capas y modelo TCP/IP de cuatro.</li>
+      <li>La UIT describe el IoT en capas de dispositivos, red, soporte de servicios y aplicaciones (UIT-T, 2012).</li></ul></article>
+    <article class="tarjeta"><h3>Características</h3><ul>
+      <li>Topologías: estrella, árbol, malla y punto a punto.</li>
+      <li>Modelos IoT: dispositivo a dispositivo, a la nube y mediante pasarela.</li></ul></article>
+    <article class="tarjeta"><h3>Funciones</h3><ul>
+      <li>Direccionamiento, enrutamiento y control de errores.</li>
+      <li>Separar las responsabilidades de cada capa y permitir la interoperabilidad (Kurose y Ross, 2017).</li></ul></article>
+    <article class="tarjeta"><h3>Casos de uso</h3><ul>
+      <li>Hogares y edificios inteligentes con pasarela a Internet.</li>
+      <li>Monitoreo industrial y agrícola con nodos que reportan a la nube (Evans, 2011).</li></ul></article>
+  </section>
+
+  <section class="tema" id="zigbee">
+    <h2>Protocolo Zigbee</h2>
+    <p class="intro">Zigbee es un estándar de comunicación inalámbrica de bajo consumo y baja velocidad que añade las capas de red y aplicación sobre la capa física y de acceso al medio de IEEE 802.15.4 (Bueno, 2015).</p>
+    <a class="figura" href="https://es.wikipedia.org/wiki/Zigbee" target="_blank" rel="noopener">Imagen: red malla Zigbee (espacio en blanco)</a>
+    <article class="tarjeta"><h3>Concepto</h3><ul>
+      <li>Red de área personal (WPAN) para sensores y actuadores.</li>
+      <li>Define tres roles: coordinador, router y dispositivo final.</li></ul></article>
+    <article class="tarjeta"><h3>Características</h3><ul>
+      <li>Bandas de 868 MHz, 915 MHz y 2,4 GHz; hasta 250 kb/s en 2,4 GHz.</li>
+      <li>Topologías en estrella, árbol y malla.</li>
+      <li>Cifrado AES de 128 bits y muy bajo consumo.</li></ul></article>
+    <article class="tarjeta"><h3>Funciones</h3><ul>
+      <li>Formar y mantener la red, y autorreparar rutas en malla.</li>
+      <li>Retransmitir mensajes entre nodos lejanos.</li></ul></article>
+    <article class="tarjeta"><h3>Casos de uso</h3><ul>
+      <li>Domótica e iluminación inteligente (Romero-Acero et al., 2020).</li>
+      <li>Redes de sensores en cultivos y automatización industrial.</li></ul></article>
+  </section>
+
+  <section class="tema" id="bluetooth">
+    <h2>Protocolo Bluetooth</h2>
+    <p class="intro">Bluetooth es una especificación para redes inalámbricas de corto alcance, originada en IEEE 802.15.1, que opera en la banda ISM de 2,4 GHz con salto de frecuencia. Existen dos variantes: Bluetooth Classic y Bluetooth Low Energy (BLE), esta última desde la versión 4.0.</p>
+    <a class="figura" href="https://es.wikipedia.org/wiki/Bluetooth" target="_blank" rel="noopener">Imagen: piconet Bluetooth (espacio en blanco)</a>
+    <article class="tarjeta"><h3>Concepto</h3><ul>
+      <li>Conexión entre dispositivos personales sin cables.</li>
+      <li>Administrado por el Bluetooth SIG.</li></ul></article>
+    <article class="tarjeta"><h3>Características</h3><ul>
+      <li>Piconets con un maestro y varios esclavos.</li>
+      <li>BLE reduce el consumo para dispositivos con batería (García Espinosa, s. f.).</li>
+      <li>Bluetooth Mesh permite redes de muchos nodos.</li></ul></article>
+    <article class="tarjeta"><h3>Funciones</h3><ul>
+      <li>Emparejar dispositivos y transferir datos o audio.</li>
+      <li>Anunciar servicios mediante balizas (beacons).</li></ul></article>
+    <article class="tarjeta"><h3>Casos de uso</h3><ul>
+      <li>Audífonos, relojes y pulseras de actividad.</li>
+      <li>Cerraduras inteligentes, balizas de ubicación y pruebas de RF en productos IoT (Rohde &amp; Schwarz, 2018).</li></ul></article>
+  </section>
+
+  <section class="tema" id="wifi">
+    <h2>Redes Wi-Fi</h2>
+    <p class="intro">Wi-Fi es la marca comercial de la Wi-Fi Alliance para dispositivos basados en la familia de estándares IEEE 802.11, que permite crear redes de área local inalámbricas (WLAN) con acceso a Internet (Forouzan, 2007).</p>
+    <a class="figura" href="https://es.wikipedia.org/wiki/Wifi" target="_blank" rel="noopener">Imagen: punto de acceso Wi-Fi (espacio en blanco)</a>
+    <article class="tarjeta"><h3>Concepto</h3><ul>
+      <li>Modo infraestructura (con punto de acceso) y modo ad hoc.</li>
+      <li>Trabaja con el protocolo IP de forma nativa.</li></ul></article>
+    <article class="tarjeta"><h3>Características</h3><ul>
+      <li>Bandas de 2,4, 5 y 6 GHz según la generación (Wi-Fi 4, 5, 6 y 6E).</li>
+      <li>Acceso al medio con CSMA/CA.</li>
+      <li>Seguridad con WPA2 y WPA3.</li></ul></article>
+    <article class="tarjeta"><h3>Funciones</h3><ul>
+      <li>Conectar equipos a la red local y a Internet.</li>
+      <li>Itinerancia (roaming) entre varios puntos de acceso.</li></ul></article>
+    <article class="tarjeta"><h3>Casos de uso</h3><ul>
+      <li>Cámaras, asistentes de voz y electrodomésticos conectados.</li>
+      <li>Campus y empresas; interconexión con Zigbee en iluminación (Romero-Acero et al., 2020).</li></ul></article>
+  </section>
+
+  <section class="referencias" id="referencias">
+    <h2>Referencias (APA 7)</h2>
+    <p>Bueno, J. A. (2015). <em>Redes de sensores en ambientes domóticos usando el protocolo ZigBee/IEEE 802.15.4</em>. Universidad Autónoma de Bucaramanga. <a href="https://revistas.uniciencia.edu.co/index.php/vision/article/download/29/27/87">https://revistas.uniciencia.edu.co/index.php/vision/article/download/29/27/87</a></p>
+    <p>Evans, D. (2011). <em>Internet de las cosas: Cómo la próxima evolución de Internet lo cambia todo</em>. Cisco Internet Business Solutions Group.</p>
+    <p>Forouzan, B. A. (2007). <em>Transmisión de datos y redes de comunicaciones</em> (4.ª ed.). McGraw-Hill.</p>
+    <p>García Espinosa, E. (s. f.). <em>Análisis del consumo de potencia de Bluetooth Low Energy en productos comerciales y su implicación en aplicaciones de Internet de las cosas</em> [Tesis doctoral, ITESO]. Repositorio ITESO. <a href="https://rei.iteso.mx/bitstream/11117/6201/1/PowerConsumptionAnalysisOfBLEcommercialProductsAndTheirImplicationsForIoTApplications.pdf">https://rei.iteso.mx/bitstream/11117/6201/1/PowerConsumptionAnalysisOfBLEcommercialProductsAndTheirImplicationsForIoTApplications.pdf</a></p>
+    <p>Kurose, J. F. y Ross, K. W. (2017). <em>Redes de computadoras: Un enfoque descendente</em> (7.ª ed.). Pearson Educación.</p>
+    <p>Real Academia Española. (s. f.). Arquitectura. En <em>Diccionario de la lengua española</em> (23.ª ed.). Recuperado el 9 de noviembre de 2026, de <a href="https://dle.rae.es/arquitectura">https://dle.rae.es/arquitectura</a></p>
+    <p>Real Academia Española. (s. f.). Comunicación. En <em>Diccionario de la lengua española</em> (23.ª ed.). Recuperado el 9 de noviembre de 2026, de <a href="https://dle.rae.es/comunicación">https://dle.rae.es/comunicación</a></p>
+    <p>Real Academia Española. (s. f.). Inalámbrico. En <em>Diccionario de la lengua española</em> (23.ª ed.). Recuperado el 9 de noviembre de 2026, de <a href="https://dle.rae.es/inalámbrico">https://dle.rae.es/inalámbrico</a></p>
+    <p>Real Academia Española. (s. f.). Protocolo. En <em>Diccionario de la lengua española</em> (23.ª ed.). Recuperado el 9 de noviembre de 2026, de <a href="https://dle.rae.es/protocolo">https://dle.rae.es/protocolo</a></p>
+    <p>Real Academia Española. (s. f.). Red. En <em>Diccionario de la lengua española</em> (23.ª ed.). Recuperado el 9 de noviembre de 2026, de <a href="https://dle.rae.es/red">https://dle.rae.es/red</a></p>
+    <p>Real Academia Española. (s. f.). Sensor. En <em>Diccionario de la lengua española</em> (23.ª ed.). Recuperado el 9 de noviembre de 2026, de <a href="https://dle.rae.es/sensor">https://dle.rae.es/sensor</a></p>
+    <p>Rohde &amp; Schwarz. (2018). <em>Bluetooth® Low Energy (V5.0): Pruebas de RF en aplicaciones del Internet de las cosas</em> (Nota de aplicación 1MA282). <a href="https://www.rohde-schwarz.com/lat/_56280-443907.html">https://www.rohde-schwarz.com/lat/_56280-443907.html</a></p>
+    <p>Romero-Acero, Á., Marín-Cano, A. y Jiménez Builes, J. A. (2020). Modelo de interconectividad ZigBee &amp; Wi-Fi para el control de un sistema inteligente de iluminación tipo LED usando IoT. <em>INGE CUC</em>. <a href="https://redcol.minciencias.gov.co/Record/RCUC2_eea7f8628af59d878a70ae8c0466bd57/Details">https://redcol.minciencias.gov.co/Record/RCUC2_eea7f8628af59d878a70ae8c0466bd57/Details</a></p>
+    <p>Stallings, W. (2004). <em>Comunicaciones y redes de computadores</em> (7.ª ed.). Pearson Educación.</p>
+    <p>Tanenbaum, A. S. y Wetherall, D. J. (2012). <em>Redes de computadoras</em> (5.ª ed.). Pearson Educación.</p>
+    <p>Unión Internacional de Telecomunicaciones. (2012). <em>Recomendación UIT-T Y.2060: Visión general de la Internet de las cosas</em>. <a href="https://www.itu.int/rec/T-REC-Y.2060">https://www.itu.int/rec/T-REC-Y.2060</a></p>
+    <p>Wikipedia. (s. f.). Bluetooth. En <em>Wikipedia, la enciclopedia libre</em>. Recuperado el 9 de noviembre de 2026, de <a href="https://es.wikipedia.org/wiki/Bluetooth">https://es.wikipedia.org/wiki/Bluetooth</a></p>
+    <p>Wikipedia. (s. f.). IEEE 802.11. En <em>Wikipedia, la enciclopedia libre</em>. Recuperado el 9 de noviembre de 2026, de <a href="https://es.wikipedia.org/wiki/IEEE_802.11">https://es.wikipedia.org/wiki/IEEE_802.11</a></p>
+    <p>Wikipedia. (s. f.). IEEE 802.15.4. En <em>Wikipedia, la enciclopedia libre</em>. Recuperado el 9 de noviembre de 2026, de <a href="https://es.wikipedia.org/wiki/IEEE_802.15.4">https://es.wikipedia.org/wiki/IEEE_802.15.4</a></p>
+    <p>Wikipedia. (s. f.). Internet de las cosas. En <em>Wikipedia, la enciclopedia libre</em>. Recuperado el 9 de noviembre de 2026, de <a href="https://es.wikipedia.org/wiki/Internet_de_las_cosas">https://es.wikipedia.org/wiki/Internet_de_las_cosas</a></p>
+    <p>Wikipedia. (s. f.). Red inalámbrica. En <em>Wikipedia, la enciclopedia libre</em>. Recuperado el 9 de noviembre de 2026, de <a href="https://es.wikipedia.org/wiki/Red_inal%C3%A1mbrica">https://es.wikipedia.org/wiki/Red_inalámbrica</a></p>
+    <p>Wikipedia. (s. f.). Topología de red. En <em>Wikipedia, la enciclopedia libre</em>. Recuperado el 9 de noviembre de 2026, de <a href="https://es.wikipedia.org/wiki/Topolog%C3%ADa_de_red">https://es.wikipedia.org/wiki/Topología_de_red</a></p>
+    <p>Wikipedia. (s. f.). Wifi. En <em>Wikipedia, la enciclopedia libre</em>. Recuperado el 9 de noviembre de 2026, de <a href="https://es.wikipedia.org/wiki/Wifi">https://es.wikipedia.org/wiki/Wifi</a></p>
+    <p>Wikipedia. (s. f.). Zigbee. En <em>Wikipedia, la enciclopedia libre</em>. Recuperado el 9 de noviembre de 2026, de <a href="https://es.wikipedia.org/wiki/Zigbee">https://es.wikipedia.org/wiki/Zigbee</a></p>
+  </section>
+</main>
+
+<footer class="pie">Protocolos de comunicación en redes inalámbricas · HTML y CSS, sin JavaScript</footer>
 </body>
 </html>
